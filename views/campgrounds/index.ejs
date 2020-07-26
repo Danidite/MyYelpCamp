@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-5">Welcome to MyYelpCamp!</h1>
+            <p class="lead">View our campgrounds from all over the world</p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">Add New Campground</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <% for(const campground of campgrounds) { %>
+            <div class="container col-md-6 col-lg-4 col-xl-4 p-1">
+                <div class="card p-0 text-center">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <img src="<%= campground.image %>" class="embed-responsive-item card-img-top" alt="...">
+                     </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><%= campground.name %></h5>
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
