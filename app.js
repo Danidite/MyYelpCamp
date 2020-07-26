@@ -24,11 +24,17 @@ const commentRoutes     = require("./routes/comments"),
 //   useFindAndModify: false,
 //   useUnifiedTopology: true
 // })
-mongoose.connect('mongodb+srv://danielsuniqueyelpcampwithpassword:danielsuniqueyelpcampwithpassword@cluster0.tccsh.mongodb.net/my_yelp_camp?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASEURL, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
 })
+
+// mongoose.connect('mongodb+srv://danielsuniqueyelpcampwithpassword:danielsuniqueyelpcampwithpassword@cluster0.tccsh.mongodb.net/my_yelp_camp?retryWrites=true&w=majority', {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useUnifiedTopology: true
+// })
 .then(() => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
 app.use(bodyParser.urlencoded({extended: true}));
