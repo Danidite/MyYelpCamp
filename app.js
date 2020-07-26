@@ -19,7 +19,12 @@ const commentRoutes     = require("./routes/comments"),
       indexRoutes       = require("./routes/index");
 
 // APP CONFIG
-mongoose.connect('mongodb://localhost:27017/my_yelp_camp', {
+// mongoose.connect('mongodb://localhost:27017/my_yelp_camp', {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useUnifiedTopology: true
+// })
+mongoose.connect('mongodb+srv://danielsuniqueyelpcampwithpassword:danielsuniqueyelpcampwithpassword@cluster0.tccsh.mongodb.net/my_yelp_camp?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
